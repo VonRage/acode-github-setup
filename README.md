@@ -4,6 +4,15 @@ This was made because I prefer using the terminal for Git and didn't much care f
 
 All terminal commands are meant to be performed inside of Acode's terminal.
 
+## Table of Contents
+- [Install Dependencies](#install-dependencies)
+- [Setup SSH Key](#setup-ssh-key)
+	- [Generate SSH Key](#generate-ssh-key)
+	- [Link SSH Key to GitHub](#link-ssh-key-to-github)
+- [Odds \& Ends for Git Setup](#odds--ends-for-git-setup)
+- [Issues](#issues)
+- [Copyright](#copyright)
+
 ## Install Dependencies
 
 Needed software to get everything running.
@@ -21,9 +30,15 @@ This is needed to allow interaction between Git and GitHub via SSH such as cloni
 
 ### Generate SSH Key
 
+First, setup and SSH key.
+
+>[!NOTE]
+> - Follow instructions after entering command 
+> - For the location to save the key,leave blank
+> - Passphrase highly suggested
+
+
 ```bash
-# First, setup an ssh key
-# Follow instructions (password highly suggested)
 ssh-keygen
 ```
 
@@ -37,7 +52,7 @@ The output of that command will look like this:
 ssh-ed25519 <random-string-of-characters> root@localhost
 ```
 
-Make sure to copy it all.
+**Make sure to copy it all.**
 
 > [!CAUTION]
 > **Never** upload your private SSH key to a repository on accident or share it with anyone. It essentially acts as a login to your account.
@@ -58,9 +73,9 @@ Below are the steps to add your newly created SSH key to your GitHub account. Ph
    - <img src="./images/step-3.png" width="100" align="middle" alt="Image walkthrough of above step">
 5. Scroll down until you see "New SSH key" in a green button and click it
 	- <img src="./images/step-4.png" width="100" align="middle" alt="Image walkthrough of above step">
-6. Scroll down to enter title and key of the New SSH key that you previously made
+6. Scroll down to enter title and key of the New SSH key that you previously made (`cat /root/.ssh/id_ed25519.pub` if you don't have it in your clipboard anymore)
 	- For title, I usually go with `<username-on-computer>@<computer-name>`
-	- Since Acode runs in sandboxed root in an app, I just put `acode@<phone-name>`
+	- Since Acode runs as sandboxed root in an app, I just put `acode@<phone-name>`
 7. Once the title is in and the key is copied over, click the green "Add SSH key" button at the bottom of the page
 	- <img src="./images/step-5.png" width="100" align="middle" alt="Image walkthrough of above step">
 
