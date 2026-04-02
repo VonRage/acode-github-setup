@@ -2,6 +2,8 @@
 
 This was made because I prefer using the terminal for Git and didn't much care for the limited GitHub plugin for Acode. This gives you full command-line control of Git version control in Acode with GitHub.
 
+All terminal commands are meant to be performed inside of Acode's terminal.
+
 ## Install Dependencies
 
 Needed software to get everything running.
@@ -15,7 +17,7 @@ apk add git openssh-keygen openssh-client-common dropbear-ssh
 
 ## Setup SSH Key
 
-This is needed to allow interaction between got and GitHub via ssh such as cloning or pushing repos
+This is needed to allow interaction between Git and GitHub via SSH such as cloning or pushing repos
 
 ### Generate SSH Key
 
