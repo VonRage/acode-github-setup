@@ -101,6 +101,7 @@ git config --global user.name <Your Name>
 git config --global user.email <Your Email>
 
 # Verify the changes
+# Don't change anything below here
 echo "Default branch set to: $(git config --global init.defaultBranch)"
 echo "Username set to: $(git config --global user.name)"
 echo "Email set to: $(git config --global user.email)"
