@@ -36,3 +36,18 @@ Make sure to copy it all.
 > **Never** upload your private SSH key to a repository on accident or share it with anyone. It essentially acts as a login to your account.
 > 
 > If you do this, **immediately** revoke the key from your GitHub account.
+
+### Link SSH Key to GitHub
+
+Below are the steps to add your newly created SSH key to your GitHub account. Photos are from Google Chrome on mobile, if you decide to do these steps on desktop for some reason then it will look different.
+
+1. Open browser to https://github.com
+	- If not already logged into GitHub, do so now
+2. Click your profile icon in the top right of the webpage
+3. Click "Settings" on the menu that pops down
+4. Click "SSH & GPG keys" on this new menu
+5. Scroll down until you see "New SSH key" in a green button and click it
+6. Scroll down to enter title and key of the New SSH key that you previously made
+	- For title, I usually go with `<username-on-computer>@<computer-name>`
+	- Since Acode runs in sandboxed root in an app, I just put `acode@<phone-name>`
+7. Once the title is in and the key is copied over, click the green "Add SSH key" button at the bottom of the page
