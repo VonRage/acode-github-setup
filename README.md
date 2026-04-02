@@ -8,6 +8,7 @@ All terminal commands are meant to be performed inside of Acode's terminal.
 - [Install Dependencies](#install-dependencies)
 - [Setup SSH Key](#setup-ssh-key)
 	- [Generate SSH Key](#generate-ssh-key)
+	- [Add New SSH Key Credentials Locally](#add-new-ssh-key-credentials-locally)
 	- [Link SSH Key to GitHub](#link-ssh-key-to-github)
 - [Odds \& Ends for Git Setup](#odds--ends-for-git-setup)
 - [Issues](#issues)
@@ -51,6 +52,7 @@ The output of that command will look like this:
 ```bash
 ssh-ed25519 <random-string-of-characters> root@localhost
 ```
+You'll need this key in a bit.
 
 **Make sure to copy it all.**
 
@@ -58,6 +60,44 @@ ssh-ed25519 <random-string-of-characters> root@localhost
 > **Never** upload your private SSH key to a repository on accident or share it with anyone. It essentially acts as a login to your account.
 > 
 > If you do this, **immediately** revoke the key from your GitHub account.
+
+### Add New SSH Key Credentials Locally
+
+We need to add the SSH key's private key. This can be done either this way or the next.
+
+> [!NOTE]
+> This will need to be done every time the app restarts
+> 
+> Working on a way to not need to do this but the built in terminal doesn't seem to source .bashrc 
+
+**Manual:**
+
+```bash
+# Start the agent and set environment variables
+eval "$(ssh-agent -s)"
+
+# Add your private key to the agent
+# Default here should be correct path if other path was correct
+ssh-add /root/.ssh/id_ed25519
+```
+
+**Automatically (Creates Scripts):**
+
+```bash
+cat << 'EOF' > /home/ssh-setup.sh
+#!/bin/bash
+# 1. Start agent if socket variable isn't set
+if [ -z "$SSH_AUTH_SOCK" ]; then
+	eval "$(ssh-agent -s)" > /dev/null
+fi
+
+# 2. Add key from the root directory
+ssh-add /root/.ssh/id_ed25519 2>/dev/null
+EOF
+
+chmod +x /home/ssh-setup.sh
+/home/ssh-setup.sh
+```
 
 ### Link SSH Key to GitHub
 
