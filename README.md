@@ -79,22 +79,6 @@ eval "$(ssh-agent -s)"
 ssh-add /root/.ssh/id_ed25519
 ```
 
-**Automatically (Creates Scripts):**
-
-```bash
-cat << 'EOF' > /home/ssh-setup.sh
-#!/bin/bash
-# 1. Start agent socket variable
-eval "$(ssh-agent -s)"
-
-# 2. Add key from the root directory
-ssh-add /root/.ssh/id_ed25519 2>/dev/null
-EOF
-
-chmod +x /home/ssh-setup.sh
-/home/ssh-setup.sh
-```
-
 ### Link SSH Key to GitHub
 
 Below are the steps to add your newly created SSH key to your GitHub account. Photos are from Google Chrome on mobile, if you decide to do these steps on desktop for some reason then it will look different.
