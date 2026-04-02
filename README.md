@@ -72,7 +72,7 @@ The following is to be done in Acode's terminal:
 - Change the default main branch name from master to main
   - `git config --global init.defaultBranch main`
 - Set username to be used in commits
-  - `git config --global user.name <Your Name>`
+  - `git config --global user.name "<Your Name>"`
 - Set email address to be used in commits
   - `git config --global user.email <your-email>`
 
