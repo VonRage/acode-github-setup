@@ -44,10 +44,16 @@ Below are the steps to add your newly created SSH key to your GitHub account. Ph
 1. Open browser to https://github.com
 	- If not already logged into GitHub, do so now
 2. Click your profile icon in the top right of the webpage
+    - <img src="./images/step-1.png" width="100" align="middle" alt="Image walkthrough of above step">
 3. Click "Settings" on the menu that pops down
+    - <img src="./images/step-2.png" width="100" align="middle" alt="Image walkthrough of above step">
 4. Click "SSH & GPG keys" on this new menu
+   - <img src="./images/step-3.png" width="100" align="middle" alt="Image walkthrough of above step">
 5. Scroll down until you see "New SSH key" in a green button and click it
+	- <img src="./images/step-4.png" width="100" align="middle" alt="Image walkthrough of above step">
 6. Scroll down to enter title and key of the New SSH key that you previously made
 	- For title, I usually go with `<username-on-computer>@<computer-name>`
 	- Since Acode runs in sandboxed root in an app, I just put `acode@<phone-name>`
 7. Once the title is in and the key is copied over, click the green "Add SSH key" button at the bottom of the page
+	- <img src="./images/step-5.png" width="100" align="middle" alt="Image walkthrough of above step">
+
