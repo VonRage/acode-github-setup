@@ -70,8 +70,6 @@ We need to add the SSH key's private key. This can be done either this way or th
 > 
 > Working on a way to not need to do this but the built in terminal doesn't seem to source .bashrc 
 
-**Manual:**
-
 ```bash
 # Start the agent and set environment variables
 eval "$(ssh-agent -s)"
@@ -86,10 +84,8 @@ ssh-add /root/.ssh/id_ed25519
 ```bash
 cat << 'EOF' > /home/ssh-setup.sh
 #!/bin/bash
-# 1. Start agent if socket variable isn't set
-if [ -z "$SSH_AUTH_SOCK" ]; then
-	eval "$(ssh-agent -s)" > /dev/null
-fi
+# 1. Start agent socket variable
+eval "$(ssh-agent -s)"
 
 # 2. Add key from the root directory
 ssh-add /root/.ssh/id_ed25519 2>/dev/null
